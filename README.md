@@ -36,6 +36,10 @@ After downloading, place the file as:
 ```
 data/household_power_consumption.txt
 ```
+---
+
+## 🔗 **Live Streamlit App:**  
+👉 [streamlit household energy usage forecast Link.](https://household-energy-usage-forecast.streamlit.app/)
 
 ---
 
