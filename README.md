@@ -22,10 +22,10 @@ This project aims to build a **predictive regression model** that estimates hous
 **Dataset Name:** Individual Household Electric Power Consumption
 **Source:** UCI Machine Learning Repository
 
-🔗 Download link:
+🎈 Download link:
 [https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption](https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption)
 
-📍 **Location:**
+🗺️ **Location:**
 Household located in **Sceaux, France (≈7 km from Paris)**
 
 📁 **Note:**
