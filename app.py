@@ -32,13 +32,13 @@ st.subheader("Enter Time Information")
 
 input_datetime = st.date_input(
     "Select Date",
-    value=datetime.today()
+    value=datetime.today(),
 )
 
 hour = st.selectbox(
     "Hour of Day",
     options=list(range(1, 25)),
-    index=11
+    index=11,
 )
 
 hour = hour - 1  # convert to 0–23 for model
@@ -46,35 +46,30 @@ hour = hour - 1  # convert to 0–23 for model
 dayofweek = input_datetime.weekday()
 month = input_datetime.month
 
-rolling_mean_24h = (
-    final_df['Global_active_power']
-    .tail(24)
-    .mean()
-)
+rolling_mean_24h = final_df["Global_active_power"].tail(24).mean()
 
 # Optional weather
-if 'avg_temperature' in feature_cols:
+if "avg_temperature" in feature_cols:
     final_df_avg_temperature = (
-    final_df
-    .loc[final_df['month'] == month, 'avg_temperature']
-    .mean())
+        final_df.loc[final_df["month"] == month, "avg_temperature"].mean()
+    )
     avg_temperature = st.number_input(
         "Average Temperature (°C)",
-        value=final_df_avg_temperature
+        value=final_df_avg_temperature,
     )
 
 # -------------------------------
 # BUILD INPUT DATAFRAME
 # -------------------------------
 input_data = {
-    'hour': hour,
-    'dayofweek': dayofweek,
-    'month': month,
-    'rolling_mean_24h': rolling_mean_24h
+    "hour": hour,
+    "dayofweek": dayofweek,
+    "month": month,
+    "rolling_mean_24h": rolling_mean_24h,
 }
 
-if 'avg_temperature' in feature_cols:
-    input_data['avg_temperature'] = avg_temperature
+if "avg_temperature" in feature_cols:
+    input_data["avg_temperature"] = avg_temperature
 
 input_df = pd.DataFrame([input_data])
 
